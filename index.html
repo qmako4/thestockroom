@@ -9,25 +9,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #F5EEE0;
-    --cream-soft: #FAF5EA;
-    --cream-dark: #EAE0CC;
-    --orange: #B5651D;
-    --orange-soft: #D48A3F;
-    --navy: #1F3A5F;
-    --text: #1A1A1A;
-    --text-muted: #6B6357;
-    --border: rgba(26, 26, 26, 0.08);
-    --shadow-sm: 0 1px 2px rgba(26, 26, 26, 0.04);
-    --shadow: 0 2px 8px rgba(26, 26, 26, 0.04), 0 12px 32px rgba(26, 26, 26, 0.06);
-    --shadow-lg: 0 4px 16px rgba(26, 26, 26, 0.06), 0 24px 56px rgba(26, 26, 26, 0.08);
+    --bg: #FFFFFF;
+    --bg-subtle: #FAFAFA;
+    --bg-card: #F7F7F7;
+    --bg-dark: #0A0A0A;
+    --bg-dark-2: #1A1A1A;
+    --text: #0A0A0A;
+    --text-muted: #737373;
+    --text-on-dark: #FFFFFF;
+    --text-on-dark-muted: rgba(255, 255, 255, 0.65);
+    --border: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.15);
+    --border-on-dark: rgba(255, 255, 255, 0.12);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.06), 0 24px 56px rgba(0, 0, 0, 0.08);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--cream);
+    background: var(--bg);
     color: var(--text);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-size: 17px;
@@ -40,7 +43,7 @@
   /* ===== NAV ===== */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(245, 238, 224, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
@@ -55,64 +58,32 @@
   }
   .logo-badge {
     width: 30px; height: 30px;
-    background: var(--text); color: var(--cream);
+    background: var(--text); color: var(--text-on-dark);
     display: flex; align-items: center; justify-content: center;
     border-radius: 8px;
     font-weight: 800; font-size: 15px;
   }
   .nav-cta {
-    background: var(--text); color: var(--cream);
+    background: var(--text); color: var(--text-on-dark);
     padding: 10px 20px; border-radius: 999px;
     text-decoration: none; font-weight: 600; font-size: 14px;
     transition: background 0.2s ease;
   }
-  .nav-cta:hover { background: var(--orange); }
+  .nav-cta:hover { background: #2A2A2A; }
 
   /* ===== BUTTONS ===== */
   .btn-primary {
     display: inline-flex; align-items: center; gap: 8px;
-    background: var(--text); color: var(--cream);
+    background: var(--text); color: var(--text-on-dark);
     padding: 16px 32px; border-radius: 999px;
     text-decoration: none; font-weight: 600; font-size: 16px;
     transition: all 0.2s ease;
     cursor: pointer; border: none;
     font-family: inherit;
   }
-  .btn-primary:hover { background: var(--orange); transform: translateY(-1px); }
+  .btn-primary:hover { background: #2A2A2A; transform: translateY(-1px); }
   .btn-arrow { display: inline-block; transition: transform 0.2s ease; }
   .btn-primary:hover .btn-arrow { transform: translateX(3px); }
-
-  /* ===== HERO ===== */
-  .hero {
-    padding: 100px 32px 120px;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .eyebrow {
-    display: inline-block;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 28px;
-  }
-  h1.hero-headline {
-    font-weight: 700;
-    font-size: clamp(52px, 9.5vw, 112px);
-    line-height: 0.98;
-    letter-spacing: -0.045em;
-    margin-bottom: 24px;
-  }
-  h1.hero-headline .accent { color: var(--orange); }
-  .hero-sub {
-    font-size: clamp(18px, 2vw, 22px);
-    color: var(--text-muted);
-    max-width: 580px;
-    margin: 0 auto 40px;
-    line-height: 1.45;
-  }
 
   /* ===== SECTION BASE ===== */
   section.content {
@@ -126,7 +97,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-weight: 600;
-    color: var(--orange);
+    color: var(--text-muted);
     margin-bottom: 18px;
   }
   .section-title {
@@ -136,8 +107,8 @@
     letter-spacing: -0.035em;
     margin-bottom: 20px;
     max-width: 760px;
+    color: var(--text);
   }
-  .section-title .accent { color: var(--orange); }
   .section-intro {
     color: var(--text-muted);
     font-size: 18px;
@@ -155,7 +126,7 @@
   .who-item {
     padding: 32px;
     border-radius: 16px;
-    background: var(--cream-soft);
+    background: var(--bg-subtle);
     border: 1px solid var(--border);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
@@ -163,7 +134,7 @@
   .who-num {
     font-weight: 700;
     font-size: 32px;
-    color: var(--orange);
+    color: var(--text);
     margin-bottom: 20px;
     letter-spacing: -0.02em;
   }
@@ -178,13 +149,12 @@
   /* ===== WHAT'S INSIDE ===== */
   .inside-section {
     padding: 100px 32px;
-    background: var(--navy);
-    color: var(--cream);
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
   }
   .inside-inner { max-width: 1100px; margin: 0 auto; }
-  .inside-section .section-label { color: var(--orange-soft); }
-  .inside-section .section-title { color: var(--cream); }
-  .inside-section .section-title .accent { color: var(--orange-soft); }
+  .inside-section .section-label { color: var(--text-on-dark-muted); }
+  .inside-section .section-title { color: var(--text-on-dark); }
 
   .pillars {
     display: grid;
@@ -192,20 +162,20 @@
     gap: 16px;
   }
   .pillar {
-    background: rgba(245, 238, 224, 0.04);
-    border: 1px solid rgba(245, 238, 224, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-on-dark);
     padding: 32px;
     border-radius: 16px;
     transition: background 0.2s ease, transform 0.2s ease;
   }
   .pillar:hover {
-    background: rgba(245, 238, 224, 0.08);
+    background: rgba(255, 255, 255, 0.06);
     transform: translateY(-2px);
   }
   .pillar-num {
     font-weight: 600;
     font-size: 12px;
-    color: var(--orange-soft);
+    color: var(--text-on-dark-muted);
     letter-spacing: 0.12em;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -216,10 +186,10 @@
     line-height: 1.15;
     margin-bottom: 12px;
     letter-spacing: -0.025em;
-    color: var(--cream);
+    color: var(--text-on-dark);
   }
   .pillar-desc {
-    color: rgba(245, 238, 224, 0.72);
+    color: var(--text-on-dark-muted);
     font-size: 15px;
     line-height: 1.55;
   }
@@ -256,7 +226,7 @@
     overflow: hidden;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    background: var(--cream-soft);
+    background: var(--bg-subtle);
     display: flex;
     flex-direction: column;
   }
@@ -266,12 +236,13 @@
 
   .flip-card-back {
     transform: rotateY(180deg);
-    background: var(--orange);
-    color: var(--cream);
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
     padding: 24px;
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-color: var(--bg-dark);
   }
 
   .flip-photo {
@@ -290,12 +261,12 @@
     object-fit: cover;
     display: block;
   }
-  .flip-photo-icon { font-size: 56px; filter: grayscale(0.2); }
+  .flip-photo-icon { font-size: 56px; filter: grayscale(1); opacity: 0.8; }
 
-  .flip-pattern-1 { background: #EADCC0; }
-  .flip-pattern-2 { background: #D8DFE8; }
-  .flip-pattern-3 { background: #EED7B5; }
-  .flip-pattern-4 { background: #CBD4DE; }
+  .flip-pattern-1 { background: #EFEFEF; }
+  .flip-pattern-2 { background: #E8E8E8; }
+  .flip-pattern-3 { background: #F2F2F2; }
+  .flip-pattern-4 { background: #EAEAEA; }
 
   .flip-tag {
     position: absolute;
@@ -309,6 +280,7 @@
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.01em;
+    border: 1px solid var(--border);
   }
 
   .flip-body {
@@ -333,7 +305,7 @@
     margin-top: auto;
     font-variant-numeric: tabular-nums;
   }
-  .flip-stats .arrow { color: var(--orange); font-weight: 700; padding: 0 2px; }
+  .flip-stats .arrow { color: var(--text); font-weight: 700; padding: 0 2px; }
   .flip-hint {
     padding: 10px 18px;
     border-top: 1px solid var(--border);
@@ -350,7 +322,7 @@
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: 0.7;
     margin-bottom: 12px;
   }
   .flip-back-amount {
@@ -363,17 +335,18 @@
   .flip-back-multiplier {
     font-size: 15px;
     font-weight: 500;
-    opacity: 0.9;
+    opacity: 0.85;
     padding: 6px 14px;
-    background: rgba(245, 238, 224, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
   .flip-back-hint {
     position: absolute;
     bottom: 18px;
     left: 0; right: 0;
     font-size: 10px;
-    opacity: 0.7;
+    opacity: 0.5;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -389,7 +362,7 @@
 
   /* ===== ABOUT ===== */
   .about-section {
-    background: var(--cream-soft);
+    background: var(--bg-subtle);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 100px 32px;
@@ -403,7 +376,7 @@
   }
   .about-photo {
     aspect-ratio: 4/5;
-    background: var(--cream-dark);
+    background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 16px;
     position: relative;
@@ -425,8 +398,8 @@
     line-height: 1.05;
     letter-spacing: -0.03em;
     margin-bottom: 24px;
+    color: var(--text);
   }
-  .about-text h3 .accent { color: var(--orange); }
   .about-text p {
     margin-bottom: 16px;
     font-size: 17px;
@@ -449,7 +422,7 @@
   .pricing-card {
     max-width: 460px;
     margin: 0 auto;
-    background: var(--cream-soft);
+    background: var(--bg-subtle);
     border: 1px solid var(--border);
     border-radius: 20px;
     padding: 40px 36px;
@@ -461,7 +434,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-weight: 600;
-    color: var(--orange);
+    color: var(--text-muted);
     margin-bottom: 16px;
   }
   .price-amount {
@@ -470,6 +443,7 @@
     line-height: 1;
     letter-spacing: -0.045em;
     margin-bottom: 4px;
+    color: var(--text);
   }
   .price-amount-period {
     font-size: 22px;
@@ -499,7 +473,7 @@
   .price-check {
     flex-shrink: 0;
     width: 20px; height: 20px;
-    background: var(--text); color: var(--cream);
+    background: var(--text); color: var(--text-on-dark);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-size: 11px; font-weight: 700;
@@ -532,7 +506,7 @@
     width: 28px; height: 28px;
     border: 1px solid var(--border);
     border-radius: 50%;
-    background: var(--cream-soft);
+    background: var(--bg-subtle);
     display: flex; align-items: center; justify-content: center;
     font-size: 16px; font-weight: 400;
     transition: transform 0.25s ease, background 0.2s ease;
@@ -540,7 +514,7 @@
   details.faq-item[open] .faq-toggle {
     transform: rotate(45deg);
     background: var(--text);
-    color: var(--cream);
+    color: var(--text-on-dark);
     border-color: var(--text);
   }
   .faq-answer {
@@ -555,8 +529,8 @@
   .final-cta {
     text-align: center;
     padding: 120px 32px;
-    background: var(--text);
-    color: var(--cream);
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
   }
   .final-cta h2 {
     font-weight: 700;
@@ -568,19 +542,18 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .final-cta h2 .accent { color: var(--orange-soft); }
   .final-cta .btn-primary {
-    background: var(--cream);
+    background: var(--text-on-dark);
     color: var(--text);
   }
   .final-cta .btn-primary:hover {
-    background: var(--orange-soft);
+    background: #E5E5E5;
     color: var(--text);
   }
 
   /* ===== FOOTER ===== */
   footer {
-    background: var(--cream-dark);
+    background: var(--bg-card);
     color: var(--text-muted);
     padding: 40px 32px;
     text-align: center;
@@ -605,7 +578,6 @@
   @media (max-width: 560px) {
     nav { padding: 14px 20px; }
     .nav-cta { padding: 8px 16px; font-size: 13px; }
-    .hero { padding: 60px 20px 90px; }
     section.content, .inside-section, .about-section, .final-cta { padding: 70px 20px; }
     .pricing-card { padding: 32px 24px; }
     .btn-primary { padding: 14px 26px; font-size: 15px; }
@@ -627,78 +599,40 @@
   <a href="#pricing" class="nav-cta">Join</a>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="eyebrow">Private community · Now open</div>
-  <h1 class="hero-headline">
-    A group for<br>
-    <span class="accent">resellers.</span>
-  </h1>
-  <p class="hero-sub">
-    Learn what to sell, where to get it, and how to grow your IG. No fluff, no guru nonsense — just what actually works.
-  </p>
-  <a href="#pricing" class="btn-primary">
-    Join The Stockroom
-    <span class="btn-arrow">→</span>
-  </a>
-</header>
+<!-- PRICING -->
+<section class="content pricing-section" id="pricing">
+  <div class="section-label">Simple pricing</div>
+  <h2 class="section-title">Make your money back<br>in one sale.</h2>
+  <p class="section-intro">No tiers, no upsells, no catch.</p>
 
-<!-- WHO -->
-<section class="content" id="who">
-  <div class="section-label">Who this is for</div>
-  <h2 class="section-title">You're in the right place if<span class="accent">…</span></h2>
+  <div class="pricing-card">
+    <div class="price-label">The Stockroom Membership</div>
+    <div class="price-amount">£15<span class="price-amount-period">/month</span></div>
+    <div class="price-cancel">Cancel anytime. No lock-in.</div>
 
-  <div class="who-list">
-    <div class="who-item">
-      <div class="who-num">01</div>
-      <div class="who-text">You're already selling on Depop or Vinted — or about to start.</div>
-    </div>
-    <div class="who-item">
-      <div class="who-num">02</div>
-      <div class="who-text">Your sales have plateaued and you can't figure out why.</div>
-    </div>
-    <div class="who-item">
-      <div class="who-num">03</div>
-      <div class="who-text">You want to build something that lasts, not just flip a few items.</div>
-    </div>
-  </div>
-</section>
+    <ul class="price-features">
+      <li><span class="price-check">✓</span> Stock access through me — factory prices from my supplier network</li>
+      <li><span class="price-check">✓</span> Weekly flip shouts — what to buy, where to find it</li>
+      <li><span class="price-check">✓</span> A Telegram of UK resellers actually in the game</li>
+      <li><span class="price-check">✓</span> Built-in accountability — we push each other to list, post, sell</li>
+      <li><span class="price-check">✓</span> Monthly live Q&amp;A calls — bring any question</li>
+      <li><span class="price-check">✓</span> Personal shop breakdowns, written by me</li>
+      <li><span class="price-check">✓</span> The full Playbook — sourcing, photography, listings, branding, growth</li>
+      <li><span class="price-check">✓</span> The £30k mistake list — every trap I fell into, so you don't</li>
+      <li><span class="price-check">✓</span> Every future update, free forever</li>
+    </ul>
 
-<!-- WHAT'S INSIDE -->
-<section class="inside-section" id="inside">
-  <div class="inside-inner">
-    <div class="section-label">What's inside</div>
-    <h2 class="section-title">Everything you need<br>to <span class="accent">actually grow.</span></h2>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-num">01 — The Playbook</div>
-        <h3 class="pillar-title">Video lessons that get to the point</h3>
-        <p class="pillar-desc">Branding, funneling, sourcing. The stuff I wish someone had shown me when I started — short, useful modules you can watch on the train.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">02 — The Community</div>
-        <h3 class="pillar-title">A private Telegram that's actually active</h3>
-        <p class="pillar-desc">A tight group of UK resellers swapping tips, wins, and cold hard numbers. No lurkers, no noise.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">03 — Supplier Access</div>
-        <h3 class="pillar-title">Source inventory as a group</h3>
-        <p class="pillar-desc">Work with our vetted suppliers at better prices and lower minimums than you'd get going solo. Way less guesswork.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">04 — Direct Access</div>
-        <h3 class="pillar-title">Talk to me any time</h3>
-        <p class="pillar-desc">Weekly Q&amp;As, feedback on your shop, and personal input when you hit a wall. Real help, not AI replies.</p>
-      </div>
-    </div>
+    <a href="#" class="btn-primary">
+      Join The Stockroom
+      <span class="btn-arrow">→</span>
+    </a>
   </div>
 </section>
 
 <!-- FLIPS -->
 <section class="content" id="flips">
   <div class="section-label">Real flips</div>
-  <h2 class="section-title">Flips from the <span class="accent">group.</span></h2>
+  <h2 class="section-title">Flips from the group.</h2>
   <p class="section-intro">Tap any card to see the profit. Actual items members sourced and sold this month.</p>
 
   <div class="flips-grid">
@@ -807,47 +741,73 @@
       </div>
       <div class="about-text">
         <div class="section-label">About me</div>
-        <h3>Hi, I'm <span class="accent">[Your Name]</span>.</h3>
-        <p>I've been reselling full-time for [X] years and built a 6-figure shop on Depop from my bedroom. Nothing flashy — just a lot of trial, error, and eventually figuring out what actually works.</p>
-        <p>The Stockroom is the group I wish existed when I started. No bro-marketing, no "sigma grindset" — just a bunch of UK resellers sharing what's moving product right now.</p>
-        <div class="about-signature">— [Your Name]</div>
+        <h3>Hi, I'm Remi.</h3>
+        <p>I've been reselling full-time for 6 years — built a 6-figure shop on Instagram from my bedroom. No big launch, no agency, just me figuring it out the long way.</p>
+        <p>I've also lost over £30,000 along the way. Bad stock, worse suppliers, hauls seized at customs, chargebacks, platform bans, funds held for weeks, even lawsuits. Every mistake a reseller can make, I've made — most of them more than once. I've made it all back many times over, but I'd have got there a lot faster if someone had shown me the ropes.</p>
+        <p>Over those 6 years I've built real relationships with factories in China. Been out there, met the owners, built a supply network most resellers never get near. Cheapest rates, best quality garments in the world. No middlemen.</p>
+        <p>The Stockroom is the group I wish existed when I started. My job is to help you skip the £30k tuition fee.</p>
+        <div class="about-signature">— Remi</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="content pricing-section" id="pricing">
-  <div class="section-label">Simple pricing</div>
-  <h2 class="section-title">One price.<br><span class="accent">Everything in.</span></h2>
-  <p class="section-intro">No tiers, no upsells, no catch.</p>
+<!-- WHO -->
+<section class="content" id="who">
+  <div class="section-label">Who this is for</div>
+  <h2 class="section-title">You're in the right place if…</h2>
 
-  <div class="pricing-card">
-    <div class="price-label">The Stockroom Membership</div>
-    <div class="price-amount">£15<span class="price-amount-period">/month</span></div>
-    <div class="price-cancel">Cancel anytime. No lock-in.</div>
+  <div class="who-list">
+    <div class="who-item">
+      <div class="who-num">01</div>
+      <div class="who-text">You're already selling on Depop or Vinted — or about to start.</div>
+    </div>
+    <div class="who-item">
+      <div class="who-num">02</div>
+      <div class="who-text">Your sales have plateaued and you can't figure out why.</div>
+    </div>
+    <div class="who-item">
+      <div class="who-num">03</div>
+      <div class="who-text">You want to build something that lasts, not just flip a few items.</div>
+    </div>
+  </div>
+</section>
 
-    <ul class="price-features">
-      <li><span class="price-check">✓</span> Full access to The Playbook</li>
-      <li><span class="price-check">✓</span> Private Telegram community</li>
-      <li><span class="price-check">✓</span> Supplier directory access</li>
-      <li><span class="price-check">✓</span> Weekly flip shouts</li>
-      <li><span class="price-check">✓</span> Monthly group Q&amp;A calls</li>
-      <li><span class="price-check">✓</span> Shop feedback &amp; audits</li>
-      <li><span class="price-check">✓</span> All future updates included</li>
-    </ul>
+<!-- WHAT'S INSIDE -->
+<section class="inside-section" id="inside">
+  <div class="inside-inner">
+    <div class="section-label">What's inside</div>
+    <h2 class="section-title">Everything you need<br>to actually grow.</h2>
 
-    <a href="#" class="btn-primary">
-      Join The Stockroom
-      <span class="btn-arrow">→</span>
-    </a>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01 — The Playbook</div>
+        <h3 class="pillar-title">Video lessons that get to the point</h3>
+        <p class="pillar-desc">Branding, funneling, sourcing. The stuff I wish someone had shown me when I started — short, useful modules you can watch on the train.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02 — The Community</div>
+        <h3 class="pillar-title">A private Telegram that's actually active</h3>
+        <p class="pillar-desc">A tight group of UK resellers swapping tips, wins, and cold hard numbers. No lurkers, no noise.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03 — Supplier Access</div>
+        <h3 class="pillar-title">Source inventory as a group</h3>
+        <p class="pillar-desc">Work with our vetted suppliers at better prices and lower minimums than you'd get going solo. Way less guesswork.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04 — Direct Access</div>
+        <h3 class="pillar-title">Talk to me any time</h3>
+        <p class="pillar-desc">Weekly Q&amp;As, feedback on your shop, and personal input when you hit a wall. Real help, not AI replies.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="content" id="faq">
   <div class="section-label">Frequently asked</div>
-  <h2 class="section-title" style="margin-left:auto;margin-right:auto;text-align:center;">Answers<span class="accent">.</span></h2>
+  <h2 class="section-title" style="margin-left:auto;margin-right:auto;text-align:center;">Answers.</h2>
 
   <div class="faq-list">
     <details class="faq-item">
@@ -875,7 +835,7 @@
       <summary>What's the supplier access about?
         <div class="faq-toggle">+</div>
       </summary>
-      <div class="faq-answer">We've built relationships with a handful of Chinese suppliers we've worked with for years and met in person. They work with our members on the lowest rates and lower minimums than you'd ever get going solo. Premium quality garments at source prices — not dropshipping junk.</div>
+      <div class="faq-answer">I've built relationships with a handful of Chinese suppliers over years of working with them in person. You source through me, and I pass those factory-direct prices straight to members — rates and minimums no solo reseller can match. Premium quality garments at source prices, not dropshipping junk.</div>
     </details>
 
     <details class="faq-item">
@@ -889,7 +849,7 @@
 
 <!-- FINAL CTA -->
 <section class="final-cta">
-  <h2>Ready to actually<br><span class="accent">make this work?</span></h2>
+  <h2>Ready to actually<br>make this work?</h2>
   <a href="#pricing" class="btn-primary">
     Join The Stockroom
     <span class="btn-arrow">→</span>
